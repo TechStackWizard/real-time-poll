@@ -13,7 +13,7 @@ const PollRoom = () => {
     const [hasVoted, setHasVoted] = useState(false);
     const [message, setMessage] = useState("");
 
-    // ✅ Generate voterId (Fairness Mechanism #1)
+    // Fairness mechanism 1
     const getVoterId = () => {
         let voterId = localStorage.getItem("voterId");
 
@@ -47,7 +47,6 @@ const PollRoom = () => {
         };
     }, [id]);
 
-    // Voting Handler
     const vote = async (optionIndex) => {
         try {
             const voterId = getVoterId();
@@ -59,7 +58,7 @@ const PollRoom = () => {
                 }
             );
 
-            // Axios automatically parses JSON
+
             const data = res.data;
 
             setHasVoted(true);
@@ -68,11 +67,11 @@ const PollRoom = () => {
         } catch (error) {
 
             if (error.response) {
-                // Server responded with error (like 400, 500)
+
                 setHasVoted(true);
                 setMessage("Something went wrong: " + error.response.data.message);
             } else {
-                // Network error
+
                 setHasVoted(true);
                 setMessage("Network error. Please try again.");
             }
@@ -84,19 +83,17 @@ const PollRoom = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
             <div className="w-full max-w-xl bg-white shadow-xl rounded-2xl p-6">
-                {/* Poll Question */}
+
                 <h1 className="text-2xl font-bold mb-6 text-center">
                     {poll.question}
                 </h1>
 
-                {/* Message */}
                 {message && (
                     <div className="mb-4 p-3 rounded-xl bg-gray-100 text-center font-semibold">
                         {message}
                     </div>
                 )}
 
-                {/* Options */}
                 <div className="space-y-4">
                     {poll.options.map((opt, index) => (
                         <button
@@ -115,7 +112,6 @@ const PollRoom = () => {
                     ))}
                 </div>
 
-                {/* Poll room link */}
                 <div className="mt-6 text-center">
                     <p className="font-semibold">Share this poll:</p>
                     <p className="text-blue-600 underline">
@@ -123,7 +119,6 @@ const PollRoom = () => {
                     </p>
                 </div>
 
-                {/* Already Voted Banner */}
                 {hasVoted && (
                     <p className="text-center mt-6 text-sm text-gray-600">
                         You can only vote once in this poll.

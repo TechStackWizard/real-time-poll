@@ -21,7 +21,6 @@ const PollDashboard = () => {
             <div className="max-w-3xl mx-auto">
                 {console.log(polls)}
 
-                {/* Header */}
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-2xl font-bold">All Polls 🗳️</h1>
 
@@ -33,7 +32,6 @@ const PollDashboard = () => {
                     </Link>
                 </div>
 
-                {/* Poll List */}
                 <div className="space-y-4">
                     {polls.length === 0 ? (
                         <p>No polls yet. Create your first poll!</p>
