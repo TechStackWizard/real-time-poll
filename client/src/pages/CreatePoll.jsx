@@ -92,6 +92,10 @@ const CreatePoll = () => {
                     Create Poll
                 </button>
 
+                <div>
+                    <Link className="text-2xl mb-4 text-center bg-black text-white py-3 rounded-xl font-semibold hover:opacity-90" to={"/"}>⬅ Go to Dashboard</Link>
+                </div>
+
                 {shareLink && (
                     <div className="mt-5 p-3 bg-green-100 rounded-xl text-center">
                         <p className="font-semibold">Share this link:</p>

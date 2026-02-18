@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import io from "socket.io-client";
 import api from "../api.js";
 
@@ -110,6 +110,10 @@ const PollRoom = () => {
                             <span className="font-bold">{opt.votes}</span>
                         </button>
                     ))}
+                </div>
+
+                <div>
+                    <Link className="text-2xl mb-4 text-center bg-black text-white py-3 rounded-xl font-semibold hover:opacity-90" to={"/"}>⬅ Go to Dashboard</Link>
                 </div>
 
                 <div className="mt-6 text-center">
