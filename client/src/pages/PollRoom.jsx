@@ -112,9 +112,7 @@ const PollRoom = () => {
                     ))}
                 </div>
 
-                <div>
-                    <Link className="text-2xl mb-4 text-center bg-black text-white py-3 rounded-xl font-semibold hover:opacity-90" to={"/"}>⬅ Go to Dashboard</Link>
-                </div>
+
 
                 <div className="mt-6 text-center">
                     <p className="font-semibold">Share this poll:</p>
