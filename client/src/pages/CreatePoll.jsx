@@ -93,7 +93,7 @@ const CreatePoll = () => {
                 </button>
 
                 <div>
-                    <Link className="text-2xl mb-4 text-center bg-black text-white py-3 rounded-xl font-semibold hover:opacity-90" to={"/"}>⬅ Go to Dashboard</Link>
+                    <Link className="w-full bg-black text-white py-3 rounded-xl font-semibold hover:opacity-90 mt-4" to={"/"}>← Go to Dashboard</Link>
                 </div>
 
                 {shareLink && (
