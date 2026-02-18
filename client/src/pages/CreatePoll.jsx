@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../api.js";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const CreatePoll = () => {
     const [question, setQuestion] = useState("");
