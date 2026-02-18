@@ -27,15 +27,15 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-    console.log("User Connected : ", socket.id);
+    // console.log("User Connected : ", socket.id);
 
     socket.on("joinPoll", (pollId) => {
         socket.join(pollId);
-        console.log(`User joined poll room : ${pollId}`);
+        // console.log(`User joined poll room : ${pollId}`);
     });
 
     socket.on("disconnect", () => {
-        console.log("User Disconnected!");
+        // console.log("User Disconnected!");
 
     });
 })
@@ -44,7 +44,7 @@ app.use("/api/polls", pollRoute);
 
 // Test Route
 app.get("/", (req, res) => {
-    res.send("Poll Rooms Backend is Running 🚀");
+    res.send("Poll Rooms Backend is Running!");
 });
 
 // Server Start
